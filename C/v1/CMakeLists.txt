@@ -2,13 +2,6 @@ cmake_minimum_required(VERSION 2.8)
 
 project(C_v1)
 
-if("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
-#   add_definitions(-g)
-
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
-endif("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
-
-
 set(SOURCES
   C.c
 )

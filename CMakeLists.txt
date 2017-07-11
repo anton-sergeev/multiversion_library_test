@@ -1,5 +1,12 @@
 cmake_minimum_required(VERSION 2.8.11)
 
+if("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+  add_definitions(-g)
+
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
+endif("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+
+
 set(LIBA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/A)
 set(LIBB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/B)
 set(LIBC_V1_DIR ${CMAKE_CURRENT_SOURCE_DIR}/C/v1)
@@ -22,20 +29,20 @@ include_directories(
 add_executable(main_A.static main_A.c)
 target_link_libraries(main_A.static A.static)
 
-add_executable(main_A.dynamic main_A.c)
-target_link_libraries(main_A.dynamic A.dynamic)
+add_executable(main_A.shared main_A.c)
+target_link_libraries(main_A.shared A.shared)
 
 
 add_executable(main_B.static main_B.c)
 target_link_libraries(main_B.static B.static)
 
-add_executable(main_B.dynamic main_B.c)
-target_link_libraries(main_B.dynamic B.dynamic)
+add_executable(main_B.shared main_B.c)
+target_link_libraries(main_B.shared B.shared)
 
 
 add_executable(main_AB.static main_AB.c)
 target_link_libraries(main_AB.static A.static B.static)
 
-add_executable(main_AB.dynamic main_AB.c)
-target_link_libraries(main_AB.dynamic A.dynamic B.dynamic)
+add_executable(main_AB.shared main_AB.c)
+target_link_libraries(main_AB.shared A.shared B.shared)
 
