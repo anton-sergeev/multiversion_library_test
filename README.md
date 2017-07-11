@@ -3,6 +3,17 @@ Test linux linking the next situation: two libraries depends on different versio
 
 This code based on [this stackoverflow answer](https://stackoverflow.com/a/44686776/1677270).
 
+## Functions calls scheme
+
+```
+main_A.exe ───┮━━━> libA ━━━━> libC.v1
+              │
+main_AB.exe ──┤
+              │
+main_B.exe ───┶━━━> libB ━━━━> libC.v2
+```
+
+
 ## How to build and run
 
 You can choose compiler by setting CC environment.
