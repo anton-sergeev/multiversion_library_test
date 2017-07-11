@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8.11)
 
-if("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+if("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
   add_definitions(-g)
 
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
-endif("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+endif("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
 
 
 set(LIBA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/A)
