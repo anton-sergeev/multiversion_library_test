@@ -31,7 +31,7 @@ Build:
 mkdir build
 cd build
 cmake ..
-make
+cmake --build .
 ```
 
 Run tests:
