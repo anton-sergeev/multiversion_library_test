@@ -1,7 +1,7 @@
 # Multiversion library test
 Test linux linking the next situation: two libraries depends on different versions third library.
 
-This code based on [this stackoverflow answer](https://stackoverflow.com/a/44686776/1677270).
+This code based on [this stackoverflow answer](https://stackoverflow.com/a/44686776/1677270). dlopen-variant is based on [this stackoverflow answer](https://stackoverflow.com/a/3249833/1677270).
 
 ## Functions calls scheme
 
