@@ -46,3 +46,8 @@ target_link_libraries(main_AB.static A.static B.static)
 add_executable(main_AB.shared main_AB.c)
 target_link_libraries(main_AB.shared A.shared B.shared)
 
+
+add_executable(main_AB.dlopen main_AB.dlopen.c)
+target_link_libraries(main_AB.dlopen dl)
+
+
