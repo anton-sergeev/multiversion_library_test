@@ -19,11 +19,11 @@ main_B.exe ───┶━━━> libB ━━━━> libC.v2
 You can choose compiler by setting CC environment.
 For using GCC:
 ```bash
-CC=/usr/bin/gcc
+export CC=/usr/bin/gcc
 ```
 For using Clang:
 ```bash
-CC=/usr/bin/clang
+export CC=/usr/bin/clang
 ```
 
 Build:
