@@ -28,20 +28,19 @@ export CC=/usr/bin/clang
 
 Build:
 ```bash
-mkdir build
-cd build
+mkdir build && cd build
 cmake ..
 cmake --build .
 ```
 
 Run tests:
 ```bash
-for i in ./main_A.* ./main_B.* ./main_AB.*; do echo "$i:"; LD_LIBRARY_PATH=./A:./B:$LD_LIBRARY_PATH $i; do
+for i in ./main_A.* ./main_B.* ./main_AB.*; do echo "$i:"; LD_LIBRARY_PATH=./A:./B:$LD_LIBRARY_PATH $i; done
 ```
 
-## Results for Ubuntu 16.04.02
+## Results
 
-Result the same for both GCC and Clang:
+Ubuntu 16.04.02, CentOS 7.3: result the same for both GCC and Clang:
 ```
 ./main_A.shared:
  main_A->call_A->call_C (v1)
