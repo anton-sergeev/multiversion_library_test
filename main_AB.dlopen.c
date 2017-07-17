@@ -6,6 +6,26 @@
 // #define DLOPEN_FLAGS RTLD_LAZY | RTLD_LOCAL
 #define DLOPEN_FLAGS RTLD_LAZY
 
+#if defined(_WIN32) || defined(__CYGWIN__)
+    // Windows (x86 or x64)
+    const char* libA = "libA.shared.dll";
+    const char* libB = "libB.shared.dll";
+#elif defined(__linux__)
+    // Linux
+    const char* libA = "libA.shared.so";
+    const char* libB = "libB.shared.so";
+#elif defined(__APPLE__) && defined(__MACH__)
+    // Mac OS
+    const char* libA = "libA.shared.dylib";
+    const char* libB = "libB.shared.dylib";
+#elif defined(unix) || defined(__unix__) || defined(__unix)
+    // Unix like OS
+    const char* libA = "libA.shared.so";
+    const char* libB = "libB.shared.so";
+#else
+    #error Unknown environment!
+#endif
+
 int main(int argc, char **argv)
 {
   (void)argc;
@@ -17,13 +37,13 @@ int main(int argc, char **argv)
   int (*call_B)(void);
   char *error;
 
-  handle_B = dlopen("libB.shared.so", DLOPEN_FLAGS);
+  handle_B = dlopen(libB, DLOPEN_FLAGS);
   if(handle_B == NULL) {
     fprintf(stderr, "%s\n", dlerror());
     exit(EXIT_FAILURE);
   }
 
-  handle_A = dlopen("libA.shared.so", DLOPEN_FLAGS);
+  handle_A = dlopen(libA, DLOPEN_FLAGS);
   if(handle_A == NULL) {
     fprintf(stderr, "%s\n", dlerror());
     exit(EXIT_FAILURE);
