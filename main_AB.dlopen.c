@@ -63,9 +63,9 @@ int main(int argc, char **argv)
     exit(EXIT_FAILURE);
   }
 
-  printf(" main_AB->");
+  printf("  main_AB->");
   call_A();
-  printf(" main_AB->");
+  printf("  main_AB->");
   call_B();
 
   dlclose(handle_B);

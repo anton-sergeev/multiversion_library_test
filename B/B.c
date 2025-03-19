@@ -7,7 +7,11 @@
 int call_B(void)
 {
   printf("call_B->");
-  call_C();
+  if(call_C() != 2) {
+    printf("    # <- wrong");
+  }
+  printf("\n");
+
   return 0;
 }
 
