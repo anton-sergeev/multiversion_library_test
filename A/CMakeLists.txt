@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(A)
+project(A C)
 
 set(SOURCES
   A.c

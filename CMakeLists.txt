@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.8.11)
 
+project(multiversion_3rd_party_lubrary C)
+
 if("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
   add_definitions(-g)
 
